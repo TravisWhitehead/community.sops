@@ -221,7 +221,7 @@ def main():
                 output_type = 'yaml'
             data = Sops.encrypt(
                 data=input_data, cwd=directory, input_type=input_type, output_type=output_type,
-                filename=os.path.relpath(path, directory) if directory is not None else path,
+                filename=path,
                 get_option_value=get_option_value, module=module,
             )
             write_file(module, data)
